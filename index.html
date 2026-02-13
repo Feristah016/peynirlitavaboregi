@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peynirlitavaboregi💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rose-deep: #8B3A62;
+            --rose-soft: #D4A5A5;
+            --cream: #FFF5F5;
+            --gold: #74fdff;/*D4AF37*/
+            --charcoal: #2C2C2C;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated background hearts */
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            opacity: 0;
+            animation: float-up 15s infinite ease-in;
+        }
+
+        .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 20%; animation-delay: 3s; font-size: 15px; }
+        .heart:nth-child(3) { left: 30%; animation-delay: 6s; }
+        .heart:nth-child(4) { left: 40%; animation-delay: 2s; font-size: 25px; }
+        .heart:nth-child(5) { left: 50%; animation-delay: 8s; }
+        .heart:nth-child(6) { left: 60%; animation-delay: 5s; font-size: 18px; }
+        .heart:nth-child(7) { left: 70%; animation-delay: 1s; }
+        .heart:nth-child(8) { left: 80%; animation-delay: 7s; font-size: 22px; }
+        .heart:nth-child(9) { left: 90%; animation-delay: 4s; }
+
+        @keyframes float-up {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+                transform: translateX(0) rotate(0deg);
+            }
+            10% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 0.3;
+            }
+            100% {
+                bottom: 110%;
+                opacity: 0;
+                transform: translateX(100px) rotate(360deg);
+            }
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header section */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            opacity: 0;
+            animation: fadeInDown 1.5s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+        }
+
+        .date-badge {
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--rose-deep);
+            margin-bottom: 20px;
+            font-weight: 400;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 600;
+            color: var(--rose-deep);
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--charcoal);
+            opacity: 0.8;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Love letter section */
+        .love-letter {
+            background: white;
+            border: 2px solid var(--rose-soft);
+            border-radius: 20px;
+            padding: 60px 50px;
+            margin: 60px auto;
+            box-shadow: 0 20px 60px rgba(139, 58, 98, 0.1);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+        }
+
+        .love-letter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--rose-soft) 0%, transparent 70%);
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .letter-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .opening {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--rose-deep);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .letter-text {
+            font-size: 20px;
+            line-height: 1.9;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            text-align: right;
+            margin-top: 40px;
+            color: var(--rose-deep);
+            font-style: italic;
+        }
+
+        /* Reasons section */
+        .reasons-section {
+            margin: 80px auto;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards 0.6s;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--rose-deep);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .reason-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid var(--rose-soft);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reason-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--rose-deep), var(--gold));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .reason-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 58, 98, 0.15);
+        }
+
+        .reason-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--rose-soft);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .reason-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--rose-deep);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .reason-text {
+            font-size: 18px;
+            color: var(--charcoal);
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* Photo memories section */
+        .memories-section {
+            margin: 80px auto;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards 0.9s;
+        }
+
+        .memories-note {
+            background: linear-gradient(135deg, var(--rose-deep), #6B2A4A);
+            color: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(139, 58, 98, 0.2);
+        }
+
+        .memories-note h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 20px;
+        }
+
+        .memories-note p {
+            font-size: 20px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .emoji-line {
+            font-size: 32px;
+            margin: 20px 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards 1.2s;
+        }
+
+        .footer-heart {
+            font-size: 60px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.1); }
+            20%, 40% { transform: scale(0.95); }
+        }
+
+        .footer-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--rose-deep);
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Proposal section */
+        .proposal-section {
+            margin: 80px auto;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease forwards 1.2s;
+        }
+
+        .proposal-box {
+            background: linear-gradient(135deg, #FFF5F5, #FFE8E8);
+            border: 3px solid var(--rose-deep);
+            border-radius: 25px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(139, 58, 98, 0.2);
+        }
+
+        .proposal-question {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--rose-deep);
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-no {
+            background: #666;
+            color: white;
+        }
+
+        .btn-no:hover {
+            background: #555;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-yes {
+            background: linear-gradient(135deg, var(--rose-deep), #C44569);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-yes::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-yes:hover::before {
+            left: 100%;
+        }
+
+        .btn-yes:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(139, 58, 98, 0.4);
+        }
+
+        /* Screen break overlay */
+        .screen-break-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .screen-break-overlay.active {
+            opacity: 1;
+            animation: screenShake 0.6s ease;
+        }
+
+        .glass-crack {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+
+        .screen-break-overlay.active .glass-crack {
+            animation: crackAppear 2s ease forwards;
+        }
+
+        @keyframes screenShake {
+            0%, 100% { transform: translate(0, 0); }
+            5% { transform: translate(-15px, -12px) rotate(-1deg); }
+            10% { transform: translate(12px, 15px) rotate(1deg); }
+            15% { transform: translate(-15px, 10px) rotate(-0.5deg); }
+            20% { transform: translate(15px, -15px) rotate(0.5deg); }
+            25% { transform: translate(-12px, -10px) rotate(-1deg); }
+            30% { transform: translate(10px, 12px) rotate(1deg); }
+            35% { transform: translate(-15px, 15px) rotate(-0.5deg); }
+            40% { transform: translate(15px, -12px) rotate(0.5deg); }
+            45% { transform: translate(-10px, -15px) rotate(-1deg); }
+            50% { transform: translate(12px, 10px) rotate(1deg); }
+            55% { transform: translate(-15px, 12px) rotate(-0.5deg); }
+            60% { transform: translate(10px, -10px) rotate(0.5deg); }
+            65% { transform: translate(-8px, -12px) rotate(-0.5deg); }
+            70% { transform: translate(8px, 12px) rotate(0.5deg); }
+            75% { transform: translate(-10px, 8px) rotate(-0.3deg); }
+            80% { transform: translate(8px, -8px) rotate(0.3deg); }
+            85% { transform: translate(-5px, -8px) rotate(-0.2deg); }
+            90% { transform: translate(5px, 8px) rotate(0.2deg); }
+            95% { transform: translate(-3px, 5px) rotate(-0.1deg); }
+        }
+
+        @keyframes crackAppear {
+            0% {
+                opacity: 0;
+                filter: blur(3px);
+            }
+            5% {
+                opacity: 0.95;
+                filter: blur(0px);
+            }
+            50% {
+                opacity: 0.9;
+                filter: blur(0px);
+            }
+            100% {
+                opacity: 0;
+                filter: blur(2px);
+            }
+        }
+
+        /* Impact center */
+        .impact-center {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(200, 200, 200, 0.6) 30%, transparent 70%);
+            box-shadow: 
+                0 0 20px rgba(255, 255, 255, 0.8),
+                0 0 40px rgba(255, 255, 255, 0.5),
+                inset 0 0 20px rgba(0, 0, 0, 0.2);
+            filter: blur(1px);
+        }
+
+        /* Crack lines */
+        .crack-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95) 20%, rgba(255, 255, 255, 0.95) 80%, transparent);
+            transform-origin: left center;
+            box-shadow: 
+                0 0 3px rgba(255, 255, 255, 0.8),
+                0 0 8px rgba(200, 200, 200, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.6);
+        }
+
+        .crack-line.secondary {
+            background: linear-gradient(90deg, transparent, rgba(220, 220, 220, 0.7) 30%, rgba(220, 220, 220, 0.7) 70%, transparent);
+        }
+
+        /* Glass shards */
+        .glass-shard {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 
+                0 0 5px rgba(255, 255, 255, 0.4),
+                inset 0 0 10px rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(1px);
+        }
+
+        /* Confetti canvas */
+        #confettiCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .love-letter {
+                padding: 40px 30px;
+            }
+
+            .letter-text {
+                font-size: 18px;
+                text-align: left;
+            }
+
+            .reasons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .memories-note {
+                padding: 35px 25px;
+            }
+
+            .proposal-box {
+                padding: 40px 25px;
+            }
+
+            .btn {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        /* Sparkle effect on hover */
+        .sparkle {
+            position: relative;
+            cursor: default;
+        }
+
+        .sparkle:hover::after {
+            content: '✨';
+            position: absolute;
+            animation: sparkle-pop 0.6s ease;
+        }
+
+        @keyframes sparkle-pop {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts">
+        <div class="heart"><img src="none.gif"></div>
+        <div class="heart"><img src="pet.gif"></div>
+        <div class="heart">❤️</div>
+        <div class="heart"><img src="none (1).gif"></div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+        <div class="heart">💝</div>
+        <div class="heart"><img src="pet (1).gif"></div>
+        <div class="heart">❤️</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="date-badge">14.02.2026</div>
+            <h1 class="sparkle">Nisama</h1>
+            <p class="subtitle">uzakta olsak da sana bi hediye vermesem olmazdı</p>
+        </header>
+
+        <section class="love-letter">
+            <div class="letter-content">
+                <div class="opening">To my love,</div>
+                
+                <p class="letter-text">
+                    You made me realize there is more to life, more colors to see, more smells to smell, more sounds to hear, more places to be, more reasons to be happy.
+                </p>
+
+                <p class="letter-text">
+                    And I want to experience all of it with you, and this little shit called kekik.
+                </p>
+
+                <p class="letter-text">
+                    Happy Valentine's Day, my love. Thank you for being you, world is worth living in when i know you are in it too.
+                </p>
+
+                <div class="signature">zidzib ♡</div>
+            </div>
+        </section>
+
+        <section class="reasons-section">
+            <h2 class="section-title">6 Reasons To Love You</h2>
+            
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-number">1</div>
+                    <h3 class="reason-title">beni ısırıyosun</h3>
+                    <p class="reason-text">
+                        eminim ki sevmesem cok cok daha sert ısırır parcalardın(ama zaten cok seviyorum)
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">2</div>
+                    <h3 class="reason-title">Tatlı biseysin</h3>
+                    <p class="reason-text">
+                        cok sirin gorunuyon bakıp da sevmemek pek mumkun degil
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">3</div>
+                    <h3 class="reason-title">osuruyon</h3>
+                    <p class="reason-text">
+                        acıklamama gerek bile yok, farori ozellik.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">4</div>
+                    <h3 class="reason-title">sana tursu alınca mutlu olusyosun</h3>
+                    <p class="reason-text">
+                        hemen hemen her sorunu suspayı tursusuyla cozebilcegimi dusunuyom
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">5</div>
+                    <h3 class="reason-title">assssırı asırı asırı guzelsin</h3>
+                    <p class="reason-text">
+                        NASI BU KADAR GUZEL OLABILIYOSUN ILLEGAL OLMALI BU ELINDE COK BUYUK BI GUC VAR HERKESGORUP NASI ASIK OLMUYO ANLAMIYOM
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-number">6</div>
+                    <h3 class="reason-title">sensin♡</h3>
+                    <p class="reason-text">
+                        üsttekilerin hiç biri olmasa da sen var olduğun sürece seni sonsuza kadar seveceğim.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="memories-section">
+            <div class="memories-note">
+                <h2>Zidzib...</h2>
+                <p>
+                    zidzibzidzidzidzidzib zidzib zib zib zid zid zib zidzib zidzibbb.
+                </p>
+            </div>
+        </section>
+
+        <section class="proposal-section">
+            <div class="proposal-box">
+                <h2 class="proposal-question">Will You Be My Valentine?</h2>
+                <div class="button-container">
+                    <button class="btn btn-no" id="noButton">noo im dumb</button>
+                    <button class="btn btn-yes" id="yesButton">ÇOK İSTERİM</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-heart">🤍</div>
+            <p class="footer-text">I will love you till the last star in the universe burns out and everything will forever be in darkness. and then I will love you some more.</p>
+        </footer>
+    </div>
+
+    <!-- Screen break overlay -->
+    <div class="screen-break-overlay" id="screenBreak">
+        <div class="glass-crack" id="glassCrack"></div>
+    </div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script>
+        // Click tracking for easter egg
+        let clickCount = 0;
+        let clickTimer = null;
+
+        // Sound generation functions
+        function playGlassBreakSound() {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Create initial impact sound (low frequency thud)
+            const impactOsc = audioContext.createOscillator();
+            const impactGain = audioContext.createGain();
+            impactOsc.connect(impactGain);
+            impactGain.connect(audioContext.destination);
+            impactOsc.frequency.setValueAtTime(80, audioContext.currentTime);
+            impactOsc.frequency.exponentialRampToValueAtTime(40, audioContext.currentTime + 0.1);
+            impactGain.gain.setValueAtTime(0.6, audioContext.currentTime);
+            impactGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+            impactOsc.start(audioContext.currentTime);
+            impactOsc.stop(audioContext.currentTime + 0.1);
+            
+            // Create high-frequency shattering sound with noise
+            const bufferSize = audioContext.sampleRate * 0.5;
+            const noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+            const output = noiseBuffer.getChannelData(0);
+            
+            // Generate white noise with envelope for glass shatter
+            for (let i = 0; i < bufferSize; i++) {
+                const t = i / audioContext.sampleRate;
+                const envelope = Math.exp(-t * 8); // Fast decay
+                output[i] = (Math.random() * 2 - 1) * envelope;
+            }
+            
+            const noiseSource = audioContext.createBufferSource();
+            noiseSource.buffer = noiseBuffer;
+            
+            // High-pass filter for glass-like sound
+            const highpass = audioContext.createBiquadFilter();
+            highpass.type = 'highpass';
+            highpass.frequency.value = 2000;
+            
+            const noiseGain = audioContext.createGain();
+            noiseGain.gain.setValueAtTime(0.4, audioContext.currentTime + 0.02);
+            noiseGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            noiseSource.connect(highpass);
+            highpass.connect(noiseGain);
+            noiseGain.connect(audioContext.destination);
+            
+            noiseSource.start(audioContext.currentTime + 0.02);
+            
+            // Add multiple glass shatter harmonics
+            const frequencies = [3000, 4500, 6000, 8000, 10000];
+            frequencies.forEach((freq, index) => {
+                const osc = audioContext.createOscillator();
+                const gain = audioContext.createGain();
+                
+                osc.connect(gain);
+                gain.connect(audioContext.destination);
+                
+                osc.frequency.value = freq + (Math.random() * 500 - 250);
+                osc.type = 'sine';
+                
+                const startTime = audioContext.currentTime + 0.02 + (index * 0.01);
+                const duration = 0.15 + (Math.random() * 0.1);
+                
+                gain.gain.setValueAtTime(0.15, startTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+                
+                osc.start(startTime);
+                osc.stop(startTime + duration);
+            });
+            
+            // Add tinkling falling glass pieces sound
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const tinkleOsc = audioContext.createOscillator();
+                    const tinkleGain = audioContext.createGain();
+                    
+                    tinkleOsc.connect(tinkleGain);
+                    tinkleGain.connect(audioContext.destination);
+                    
+                    tinkleOsc.frequency.value = 4000 + Math.random() * 4000;
+                    tinkleOsc.type = 'sine';
+                    
+                    tinkleGain.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    tinkleGain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.08);
+                    
+                    tinkleOsc.start(audioContext.currentTime);
+                    tinkleOsc.stop(audioContext.currentTime + 0.08);
+                }, i * 80 + 100);
+            }
+        }
+
+        function playYippeeSound(superMode = false) {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Create multiple tones for a cheerful sound
+            const frequencies = [523.25, 659.25, 783.99, 1046.50]; // C, E, G, High C
+            const volume = superMode ? 0.5 : 0.2; // Much louder in super mode
+            
+            frequencies.forEach((freq, index) => {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.value = freq;
+                oscillator.type = 'sine';
+                
+                const startTime = audioContext.currentTime + (index * 0.1);
+                gainNode.gain.setValueAtTime(volume, startTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + 0.4);
+                
+                oscillator.start(startTime);
+                oscillator.stop(startTime + 0.4);
+            });
+
+            // Add extra celebratory sounds in super mode
+            if (superMode) {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        frequencies.forEach((freq, index) => {
+                            const oscillator = audioContext.createOscillator();
+                            const gainNode = audioContext.createGain();
+                            
+                            oscillator.connect(gainNode);
+                            gainNode.connect(audioContext.destination);
+                            
+                            oscillator.frequency.value = freq * (1 + i * 0.2);
+                            oscillator.type = 'triangle';
+                            
+                            const startTime = audioContext.currentTime + (index * 0.05);
+                            gainNode.gain.setValueAtTime(0.3, startTime);
+                            gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + 0.3);
+                            
+                            oscillator.start(startTime);
+                            oscillator.stop(startTime + 0.3);
+                        });
+                    }, i * 200);
+                }
+            }
+        }
+
+        // Create realistic broken glass effect
+        function createGlassCracks() {
+            const container = document.getElementById('glassCrack');
+            container.innerHTML = ''; // Clear previous cracks
+            
+            // Random impact point (slightly off-center for realism)
+            const centerX = window.innerWidth / 2 + (Math.random() * 200 - 100);
+            const centerY = window.innerHeight / 2 + (Math.random() * 200 - 100);
+            
+            // Create impact center
+            const impactCenter = document.createElement('div');
+            impactCenter.className = 'impact-center';
+            impactCenter.style.left = (centerX - 40) + 'px';
+            impactCenter.style.top = (centerY - 40) + 'px';
+            container.appendChild(impactCenter);
+            
+            // Create primary radial cracks (thick, long cracks from impact)
+            const primaryCracks = 15 + Math.floor(Math.random() * 5);
+            for (let i = 0; i < primaryCracks; i++) {
+                const angle = (i * 360 / primaryCracks) + (Math.random() * 15 - 7.5);
+                const length = 50 + Math.random() * 50; // 50-100% of screen
+                const thickness = 2 + Math.random() * 2;
+                
+                const crack = document.createElement('div');
+                crack.className = 'crack-line';
+                crack.style.left = centerX + 'px';
+                crack.style.top = centerY + 'px';
+                crack.style.width = length + '%';
+                crack.style.height = thickness + 'px';
+                crack.style.transform = `rotate(${angle}deg)`;
+                
+                container.appendChild(crack);
+                
+                // Add branching cracks from primary cracks
+                if (Math.random() > 0.3) {
+                    const branchPoint = 30 + Math.random() * 40; // Branch partway along
+                    const branchAngle = angle + (Math.random() * 60 - 30);
+                    const branchLength = 20 + Math.random() * 25;
+                    
+                    const branchX = centerX + Math.cos(angle * Math.PI / 180) * (branchPoint * window.innerWidth / 100);
+                    const branchY = centerY + Math.sin(angle * Math.PI / 180) * (branchPoint * window.innerWidth / 100);
+                    
+                    const branch = document.createElement('div');
+                    branch.className = 'crack-line secondary';
+                    branch.style.left = branchX + 'px';
+                    branch.style.top = branchY + 'px';
+                    branch.style.width = branchLength + '%';
+                    branch.style.height = (1 + Math.random()) + 'px';
+                    branch.style.transform = `rotate(${branchAngle}deg)`;
+                    
+                    container.appendChild(branch);
+                }
+            }
+            
+            // Create secondary cracks (thinner, random throughout)
+            const secondaryCracks = 30 + Math.floor(Math.random() * 20);
+            for (let i = 0; i < secondaryCracks; i++) {
+                const angle = Math.random() * 360;
+                const length = 10 + Math.random() * 25;
+                const distance = Math.random() * Math.min(window.innerWidth, window.innerHeight) * 0.4;
+                const offsetAngle = Math.random() * 360;
+                
+                const x = centerX + Math.cos(offsetAngle * Math.PI / 180) * distance;
+                const y = centerY + Math.sin(offsetAngle * Math.PI / 180) * distance;
+                
+                const crack = document.createElement('div');
+                crack.className = 'crack-line secondary';
+                crack.style.left = x + 'px';
+                crack.style.top = y + 'px';
+                crack.style.width = length + '%';
+                crack.style.height = (0.8 + Math.random() * 0.7) + 'px';
+                crack.style.transform = `rotate(${angle}deg)`;
+                crack.style.opacity = 0.6 + Math.random() * 0.3;
+                
+                container.appendChild(crack);
+            }
+            
+            // Create circular cracks around impact
+            for (let ring = 1; ring <= 3; ring++) {
+                const radius = ring * 50 + Math.random() * 30;
+                const segments = 20 + ring * 5;
+                
+                for (let i = 0; i < segments; i++) {
+                    if (Math.random() > 0.3) { // Not all segments present (broken circle)
+                        const angle1 = (i * 360 / segments);
+                        const angle2 = ((i + 0.8) * 360 / segments);
+                        
+                        const x1 = centerX + Math.cos(angle1 * Math.PI / 180) * radius;
+                        const y1 = centerY + Math.sin(angle1 * Math.PI / 180) * radius;
+                        const x2 = centerX + Math.cos(angle2 * Math.PI / 180) * radius;
+                        const y2 = centerY + Math.sin(angle2 * Math.PI / 180) * radius;
+                        
+                        const segmentLength = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                        const segmentAngle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+                        
+                        const segment = document.createElement('div');
+                        segment.className = 'crack-line secondary';
+                        segment.style.left = x1 + 'px';
+                        segment.style.top = y1 + 'px';
+                        segment.style.width = segmentLength + 'px';
+                        segment.style.height = (0.8 + Math.random() * 0.5) + 'px';
+                        segment.style.transform = `rotate(${segmentAngle}deg)`;
+                        segment.style.opacity = 0.5 + Math.random() * 0.3;
+                        
+                        container.appendChild(segment);
+                    }
+                }
+            }
+            
+            // Add glass shards near impact
+            for (let i = 0; i < 25; i++) {
+                const distance = Math.random() * 150;
+                const offsetAngle = Math.random() * 360;
+                const x = centerX + Math.cos(offsetAngle * Math.PI / 180) * distance;
+                const y = centerY + Math.sin(offsetAngle * Math.PI / 180) * distance;
+                
+                const shard = document.createElement('div');
+                shard.className = 'glass-shard';
+                shard.style.left = x + 'px';
+                shard.style.top = y + 'px';
+                shard.style.width = (5 + Math.random() * 15) + 'px';
+                shard.style.height = (5 + Math.random() * 15) + 'px';
+                shard.style.transform = `rotate(${Math.random() * 360}deg)`;
+                shard.style.opacity = 0.4 + Math.random() * 0.4;
+                
+                container.appendChild(shard);
+            }
+        }
+
+        // Screen break effect
+        function screenBreakEffect() {
+            const overlay = document.getElementById('screenBreak');
+            createGlassCracks();
+            overlay.classList.add('active');
+            
+            setTimeout(() => {
+                overlay.classList.remove('active');
+            }, 2000);
+        }
+
+        // Confetti effect
+        function createConfetti(superMode = false) {
+            const canvas = document.getElementById('confettiCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const confettiPieces = [];
+            const confettiCount = superMode ? 1500 : 150; // 10x more in super mode
+            const colors = ['#FF6B9D', '#C44569', '#FFC93C', '#D4AF37', '#FF5E78', '#FFE5E5', '#FF1493', '#FFD700'];
+            
+            class Confetti {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height - canvas.height;
+                    this.size = Math.random() * (superMode ? 12 : 8) + (superMode ? 6 : 4);
+                    this.speedY = Math.random() * (superMode ? 5 : 3) + (superMode ? 3 : 2);
+                    this.speedX = Math.random() * (superMode ? 4 : 2) - (superMode ? 2 : 1);
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.rotation = Math.random() * 360;
+                    this.rotationSpeed = Math.random() * (superMode ? 15 : 10) - (superMode ? 7.5 : 5);
+                }
+                
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+                    this.rotation += this.rotationSpeed;
+                    
+                    if (this.y > canvas.height) {
+                        this.y = -10;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+                
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.rotation * Math.PI / 180);
+                    ctx.fillStyle = this.color;
+                    
+                    // Add some variety in shapes for super mode
+                    if (superMode && Math.random() > 0.5) {
+                        // Draw heart shape occasionally
+                        ctx.beginPath();
+                        ctx.arc(-this.size / 4, -this.size / 4, this.size / 4, 0, 2 * Math.PI);
+                        ctx.arc(this.size / 4, -this.size / 4, this.size / 4, 0, 2 * Math.PI);
+                        ctx.fill();
+                    } else {
+                        ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                    }
+                    
+                    ctx.restore();
+                }
+            }
+            
+            for (let i = 0; i < confettiCount; i++) {
+                confettiPieces.push(new Confetti());
+            }
+            
+            let animationId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                confettiPieces.forEach(confetti => {
+                    confetti.update();
+                    confetti.draw();
+                });
+                
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            animate();
+            
+            // Stop confetti after 5 seconds (or 8 in super mode)
+            setTimeout(() => {
+                cancelAnimationFrame(animationId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }, superMode ? 8000 : 5000);
+        }
+
+        // Button event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const noButton = document.getElementById('noButton');
+            const yesButton = document.getElementById('yesButton');
+            
+            noButton.addEventListener('click', function() {
+                playGlassBreakSound();
+                screenBreakEffect();
+            });
+            
+            yesButton.addEventListener('click', function() {
+                // Track rapid clicks for easter egg
+                clickCount++;
+                
+                if (clickTimer) {
+                    clearTimeout(clickTimer);
+                }
+                
+                // Reset counter after 1 second
+                clickTimer = setTimeout(() => {
+                    clickCount = 0;
+                }, 1000);
+                
+                // Check if 3 rapid clicks
+                if (clickCount >= 3) {
+                    // SUPER MODE!
+                    playYippeeSound(true);
+                    createConfetti(true);
+                    clickCount = 0; // Reset
+                } else {
+                    // Normal mode
+                    playYippeeSound(false);
+                    createConfetti(false);
+                }
+            });
+
+            // Smooth scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add intersection observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for scroll animations
+            document.querySelectorAll('.reason-card, .memories-note').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Handle window resize for confetti canvas
+            window.addEventListener('resize', function() {
+                const canvas = document.getElementById('confettiCanvas');
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        });
+    </script>
+</body>
+</html>
